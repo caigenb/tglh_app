@@ -1,14 +1,23 @@
 <template>
 
     <a-breadcrumb class="layout_shrink_bread">
-    <a-icon type="profile" /> 
-        <a-breadcrumb-item>隐患上报系统</a-breadcrumb-item>
-        <a-breadcrumb-item><a href="">系统管理</a></a-breadcrumb-item>
+    <a-icon type="profile" style="width:30px"/> 
+        <a-breadcrumb-item v-for="(item,index) of $route.matched" :key="index" style="padding:5px">
+        <router-link :to="item.path">{{item.meta.title}}</router-link>
+      </a-breadcrumb-item>
     </a-breadcrumb>     
 </template>
 <script>
 export default {
-    name:'BreadCrumb'
+    name:'BreadCrumb',
+     watch :{
+        '$route':'init'
+    },
+     methods:{
+        init(){
+            console.log(this.$route)
+        }
+    }
 }
 </script>
 <style lang="scss">

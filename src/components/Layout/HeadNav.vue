@@ -30,7 +30,7 @@ import BreadCrumb from './BreadCrumb.vue'
 export default {
     name:'HeadNav',
     components:{
-        BreadCrumb
+        BreadCrumb,
     },
     data() {
       return {       

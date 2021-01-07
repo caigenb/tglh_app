@@ -8,7 +8,7 @@
       <a-layout-header style="background: #fff; padding: 0" class="layout-header">
           <head-nav></head-nav>
       </a-layout-header>
-      <a-layout-content style="margin: 30px 16px" class="layout-content">
+      <a-layout-content style="margin: 20px 16px" class="layout-content">
            <router-view></router-view>
       </a-layout-content>
       <a-layout-footer style="text-align: center">
@@ -33,9 +33,6 @@ export default {
       UserCharts
   },
   methods:{
-    test(){
-      this.$ref.leftmenu.show = !this.$ref.leftmenu.show 
-    }
   }
 }
 </script>

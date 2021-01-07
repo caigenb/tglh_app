@@ -1,12 +1,12 @@
  <template>
- <a-row style="background-color:white">
+ <a-row>
       <a-col :span="15">
-        <a>请选择数据类型：</a>
+        <a>请选择想要查看的数据：</a>
       <a-select default-value="各分厂上报数" style="width: 140px" @change="handleChange">
-      <a-select-option value="0">
+      <a-select-option value="0" @click="select1()" :FactoryName="name">
        各分厂上报数
       </a-select-option>
-      <a-select-option value="1">
+      <a-select-option value="1" @click="select2()" :FactoryName="name">
         各分厂处理数
       </a-select-option>
     </a-select>
@@ -29,6 +29,7 @@ export default {
     return {
       dateFormat: 'YYYY/MM/DD',
       monthFormat: 'YYYY/MM',
+      name:'上报数'
     };
   },
   methods: {
@@ -40,7 +41,13 @@ export default {
     handleChange(value) {
       console.log(`selected ${value}`);
     },
-  },
+    select1(){
+        this.name='上报数'
+    },
+    select2(){
+        this.name='处理数'
+    }
+      },
 };
 </script>
 <style lang="scss">

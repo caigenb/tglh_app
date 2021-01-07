@@ -9,16 +9,18 @@ const routes = [
   {
     path: '/',
     name: '登录',
-    component: Login
+    component: Login,
   },
   {
     path:'/index',
     name:'主页',
     component:index,
+    meta:{title:'主页'},
     children:[
       {
         path:'/UserCharts',
-        name:'统计信息',
+        name:'统计数据',
+        meta:{title:'统计数据'},
         component:UserCharts
       }
     ]
